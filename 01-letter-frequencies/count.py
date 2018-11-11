@@ -2,7 +2,7 @@ import string
 from collections import Counter
 
 # Read data
-with open('Jack.txt') as file:
+with open('../data/Jack.txt') as file:
     data = file.read().lower()
 
 # Remove punctuation
