@@ -26,8 +26,11 @@ bi_probs = get_ngram_probs(data, 2)
 
 # Compute cross entropy H_c(P_XY, P_X P_Y)
 cross_entropy = 0
+entropy = 0
 for pair in bi_probs:
     first, second = (pair[0], pair[1])
     cross_entropy -= bi_probs[pair] * math.log2(uni_probs[first] * uni_probs[second])
+    entropy -= bi_probs[pair] * math.log2(bi_probs[pair])
 
 print(f'The cross entropy is {cross_entropy:.4f}')
+print(f'The entropy is {entropy:.4f}')
